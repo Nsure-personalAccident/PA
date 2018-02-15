@@ -1,0 +1,129 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Product Details</title>
+<style>
+p{
+font-family: "Times New Roman";
+} 
+
+body {
+    width: 60%;
+    font-size: 16px;
+    background-color: #f2f2f2; 
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+}
+
+label.field{
+ text-align:right;
+  width: 80%;
+}
+
+input[type="text"]{
+    width:40%;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 3px;
+    font-size: 16px;
+    background-color: #f2f2f2; 
+    background-position: 20px 20px; 
+    background-repeat: no-repeat;
+}
+.val{
+    width: 50%;
+    font-size: 16px;
+    background-color: #f2f2f2; 
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+}
+</style>
+<script type="text/javascript">
+function validate()
+{
+
+   if( document.myForm.ProductName.value == "" )
+   {
+     alert( "Please provide your Product Name!" );
+     document.myForm.ProductName.focus() ;
+     return false;
+   }
+   if( document.myForm.CoverageType.value == "" )
+   {
+     alert( "Please provide your Coverage Type" );
+     document.myForm.CoverageType.focus() ;
+     return false;
+   }
+   if( document.myForm.Product.value == "" )
+   {
+     alert( "Please provide your Product" );
+     document.myForm.Product.focus() ;
+     return false;
+   }
+   if( document.myForm.Policy.value == "" )
+   {
+     alert( "Please provide your Policy" );
+     document.myForm.Policy.focus() ;
+     return false;
+   }
+}
+
+</script>
+</head>
+<body>
+<center>
+ <form action="http://localhost:8088/Travel_Care/Schedule.jsp" name="myForm"  
+          onsubmit="return(validate());">
+<form name="myForm">
+<div class=val>
+
+<fieldset>
+<legend>PRODUCT DETAILS</legend>
+
+
+<p>
+Product :
+ <select ng-model="product_name" name="ProductName" >
+    <option value="">--Select--
+    <option value="MOTORCYCLIST CARE ">MOTORCYCLIST CARE 
+    <option value="TRAVEL CARE">TRAVEL CARE
+    <option value="ULTIMA CARE">ULTIMA CARE
+</select>
+</p>
+<p>
+coverage Type :
+ <select ng-model="coverage_type" name="CoverageType" >
+    <option value="">--Select--
+    <option value="SINGLE COVERAGE ">SINGLE COVERAGE
+    <option value="DOUBLE COVERAGE">DOUBLE COVERAGE
+</select>
+</p>
+<p>
+Product :
+ <select ng-model="Coverage" name="Product" >
+    <option value="">--Select--
+    <option value="NAMED COVER">NAMED COVER
+    <option value="UNNAMED COVER">UNNAMED COVER
+    <option value="BOTH">BOTH
+</select>
+</p>
+<p>
+Policy for :
+ <select ng-model="policy_for" name="Policy" >
+    <option value="">--Select--
+    <option value="SELF">SELF
+</select>
+</p>
+ </form>
+  <br>
+ <button onclick="window.location.href='http://localhost:8088/Personal/Index.jsp'">BACK</button>
+  <input type="submit" value="NEXT">
+</div>
+
+</fieldset>
+</center>
+</body>
+</html>
