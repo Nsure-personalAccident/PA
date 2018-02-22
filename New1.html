@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Nsure </title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-grid/4.0.2/ui-grid.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-grid/4.0.2/ui-grid.min.css" />
+<script src="show.js"></script>
+
+</head>
+<body>
+<h2 align="center">NSURE GRID VIEW</h2>
+<div ng-app="app" ng-controller="MainCtrl as vm">
+  
+  <div ui-grid="vm.gridOptions" ui-grid-selection class="gridStyle">
+  <button ng-click="vm.getProductList()">Display</button>
+  </div>
+</div>
+</body>
+</html>
